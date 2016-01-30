@@ -1,0 +1,4 @@
+name: GetClientMod
+main: org.cat73.getclientmod.GetClientMod
+version: 0.0.1
+author: Cat73
