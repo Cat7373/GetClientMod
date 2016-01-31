@@ -13,12 +13,14 @@ public class PlayerStatus {
     public boolean hookNetworkManager = false;
     
     // hookNetworkManager 为 true 以下几个值才有意义
-    /** 是否收到过 REGISTER 包(Forge 客户端的标记之一) */
+    /** 是否收到过 REGISTER 包(非纯净客户端的标记之一) */
     public boolean register;
     /** 是否已经发送过获取 Mod 列表的请求包(如果不是 Forge 客户端则可能一直是 false) */
     public boolean sendGetModsPacket = false;
     /** 该客户端的 Mod 列表 */
     public HashMap<String, String> mods = new HashMap<String, String>();
+    /** 客户端名称(纯净版为 vanilla) */
+    public String clientName;
     
     /** 是否已经完成所有检查 */
     public boolean done = false;

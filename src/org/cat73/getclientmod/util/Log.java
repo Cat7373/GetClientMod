@@ -11,29 +11,26 @@ import org.cat73.getclientmod.reference.Reference;
  */
 public class Log {
     /* 日志输出流 */
-    private final Logger logger;
-    private static Log instance;
+    private static Logger logger;
 
-    private Log(Logger logger) {
-        this.logger = logger;
-    }
-    
     public static void init(Logger logger) {
-        instance = new Log(logger);
+        Log.logger = logger;
     }
 
     /**
      * 向日志输出流输出日志
-     * @param message 要输出的日志
      * @param level 日志的级别
+     * @param format 要输出的信息格式
+     * @param args 格式化时使用的数据列表
      */
     private static void log(final Level level, final String format, final Object... args) {
-        instance.logger.log(level, String.format(format, args));
+        Log.logger.log(level, String.format(format, args));
     }
     
     /**
      * 向日志输出流输出信息
-     * @param message 要输出的信息
+     * @param format 要输出的信息格式
+     * @param args 格式化时使用的数据列表
      */
     public static void info(final String format, final Object... args) {
         log(Level.INFO, "[INFO]" + format, args);
@@ -41,7 +38,8 @@ public class Log {
     
     /**
      * 向日志输出流输出警告
-     * @param message 要输出的信息
+     * @param format 要输出的信息格式
+     * @param args 格式化时使用的数据列表
      */
     public static void warning(final String format, final Object... args) {
         log(Level.INFO, "[WARN]" + format, args);
@@ -49,7 +47,8 @@ public class Log {
     
     /**
      * 向日志输出流输出警告
-     * @param message 要输出的信息
+     * @param format 要输出的信息格式
+     * @param args 格式化时使用的数据列表
      */
     public static void warn(final String format, final Object... args) {
         warning(format, args);
@@ -57,7 +56,8 @@ public class Log {
     
     /**
      * 向日志输出流输出错误
-     * @param message 要输出的信息
+     * @param format 要输出的信息格式
+     * @param args 格式化时使用的数据列表
      */
     public static void error(final String format, final Object... args) {
         log(Level.INFO, "[ERROR]" + format, args);
