@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerLoginEvent;
-import org.cat73.getclientmod.craftbukkit.proxy.Proxy;
+import org.cat73.getclientmod.craftbukkit.proxy.CraftBukkitProxy;
 import org.cat73.getclientmod.network.NetworkManagerHook;
 import org.cat73.getclientmod.reference.Reference;
 import org.cat73.getclientmod.status.PlayerStatus;
@@ -18,12 +18,11 @@ import net.minecraft.server.v1_8_R3.MinecraftServer;
 import net.minecraft.server.v1_8_R3.NetworkManager;
 import net.minecraft.server.v1_8_R3.ServerConnection;
 
-public class v1_8_R3_Proxy implements Proxy {
+public class v1_8_R3_Proxy implements CraftBukkitProxy {
     private Field h;
     private Field i;
 
-    @Override
-    public void init() {
+    public v1_8_R3_Proxy() {
         try {
             this.h = ServerConnection.class.getDeclaredField("h");
             this.i = LoginListener.class.getDeclaredField("i");

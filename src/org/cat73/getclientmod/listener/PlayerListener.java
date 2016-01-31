@@ -7,14 +7,14 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerLoginEvent;
-import org.cat73.getclientmod.craftbukkit.proxy.Proxy;
+import org.cat73.getclientmod.craftbukkit.proxy.CraftBukkitProxy;
 import org.cat73.getclientmod.status.PlayerStatus;
 import org.cat73.getclientmod.util.Log;
 
 public class PlayerListener implements Listener {
-    private final Proxy proxy;
+    private final CraftBukkitProxy proxy;
     
-    public PlayerListener(Proxy proxy) {
+    public PlayerListener(CraftBukkitProxy proxy) {
         this.proxy = proxy;
     }
 

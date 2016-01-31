@@ -108,7 +108,7 @@ public class NetworkManagerHook extends SimpleChannelInboundHandler<Object> impl
                 this.clientHello = true;
             } else {
                 PacketDataSerializer data = msg.b();
-                data.readByte();
+                data.readByte(); // 0x02
                 int modCount = data.readByte();
                 for (int i = 0; i < modCount; i++) {
                     this.playerStatus.mods.put(readUTF8String(data), readUTF8String(data));
